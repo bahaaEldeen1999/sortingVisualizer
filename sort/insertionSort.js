@@ -4,7 +4,7 @@
 **each loop arr[0 ---> j] is sorted 
 */
 
-async function insertionSort(arr, order,time){
+async function insertionSort(arr, order,time,colors){
  
     //let sorted  =  arr;
      //copyArr(arr,sorted);
@@ -49,37 +49,37 @@ async function insertionSort(arr, order,time){
      //return sorted;
    }
    
-   async function insertionSortRecCall( arr, ind,time){
+   async function insertionSortRecCall( arr, ind,time,colors){
    if(ind == arr.length){
    return;
    }
    let i=ind-1;
    while( i>=0 && arr[i].val > arr[i+1].val ){
             await Sleep(time);
-            colorSelected(arr,i,ind,"red");
+            colorSelected(arr,i,ind,colors[1]);
             //console.log(1)
            // await Sleep(time);
             swap(arr,i,i+1);
            
           //  await Sleep(time)
            // console.log(2)
-            colorUnSelected(arr,i,i+1,"blue")
+            colorUnSelected(arr,i,i+1,colors[0])
             i--;
    } 
   //  await Sleep(time);
    
-   await insertionSortRecCall(arr,ind+1,time);
+   await insertionSortRecCall(arr,ind+1,time,colors);
    }
    
-  async function insertionSortRec( arr,time){
+  async function insertionSortRec( arr,time,colors){
    //let  sorted = [];
  //  copyArr(arr,sorted);
-  await insertionSortRecCall(arr,0,time);
+  await insertionSortRecCall(arr,0,time, colors);
    
   // return sorted;]
   for(let i=0;i<arr.length;i++){
       await Sleep(time)
-      colorSorted(arr,i,"green")
+      colorSorted(arr,i,colors[2])
   }
    
    

@@ -1,4 +1,4 @@
-async function selectionSort( arr, order,time){
+async function selectionSort( arr, order,time,colors){
      
    
     if(order == "inc"){
@@ -11,11 +11,11 @@ async function selectionSort( arr, order,time){
        ind = j;
        }  
      }
-     await Sleep(time);
-     await colorSelected(arr,ind,i,"red");
+     //await Sleep(time);
+     await colorSelected(arr,ind,i,colors[1]);
      swap(arr,ind,i);
      await Sleep(time);
-     await colorUnSelected(arr,ind,i,"blue");
+     await colorUnSelected(arr,ind,i,colors[0]);
 
     
      } 
@@ -29,11 +29,11 @@ async function selectionSort( arr, order,time){
        ind = j;
        }  
      }
-     await Sleep(time);
-     await colorSelected(arr,ind,i,"red");
+     //await Sleep(time);
+     await colorSelected(arr,ind,i,colors[1]);
      swap(arr,ind,i);
      await Sleep(time);
-     await colorUnSelected(arr,ind,i,"blue");
+     await colorUnSelected(arr,ind,i,colors[1]);
 
     
      }
@@ -41,13 +41,13 @@ async function selectionSort( arr, order,time){
     
     }
     for(let i=0;i<arr.length;i++){
-        await Sleep(1)
-        colorSorted(arr,i,"green")
+        await Sleep(.5)
+        colorSorted(arr,i,colors[2])
     } 
     
     
    
    }
-   let a = createRandArray(document.getElementById("container"),100);
-   //quickSort(a,10);
-   selectionSort(a,"inc",10)
+  //  let a = createRandArray(document.getElementById("container"),100);
+  //  //quickSort(a,10);
+  //  selectionSort(a,"inc",10)

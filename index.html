@@ -4,13 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>sorting visualizer</title>
+    <link rel="stylesheet" href="style/bootstrap.min.css">
+    <link rel="stylesheet" href="style/font-awesome.min.css">
     <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-    <div id="container">
-
+    <div class="row">
+            <div  class="col-md-3" id="me">
+                <span id="openMenu"><i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+                </span>
+                <div id="menu">
+                    <div id="generateArray">
+                        <input type="number" class="form-control" placeholder="number of elements" value="80" >
+                        <button  class="btn btn-default" onclick="generateArray()">generate new array</button>
+                    </div>
+                    <div id="chooseSort">
+                        <select >
+                                <option value="bubble">bubble sort</option>
+                                <option value="insertion">insertion sort</option>
+                                <option value="merge">merge sort</option>
+                                <option value="quick">quick sort</option>
+                                <option value="select">selection sort</option>
+                              
+                        </select>
+                        <button  class="btn btn-default" onclick="sortArray()">sort</button>
+                    </div>
+                    <div id="chooseSpeed">
+                            <input type="number" class="form-control" placeholder="time in ms" value="10" min="1" max="100" >
+                            <button  class="btn btn-default" onclick="setSpeed()">set sorting speed</button>
+                            <h3 ></h3>
+                    </div>
+                </div>
+            </div>
+            <div id="container" class="col-md-9">
+        
+            </div>
     </div>
+   
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+    <script src="js/script.js"></script>
     <script src="helperFunc.js"></script>
     <script src="sort/bubbleSort.js"></script>
     <script src="sort/mergeSort.js"></script>

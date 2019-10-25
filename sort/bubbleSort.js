@@ -1,25 +1,25 @@
-async function bubbleSort(array,time){
+async function bubbleSort(array,time,colors){
     const size = array.length;
     for(let i=0;i<size;i++){
-        await Sleep(time);
+        //await Sleep(time);
         for(let j = i+1;j<size;j++){
             if( array[i].val > array[j].val ){
-                colorSelected(array,i,j,"red");
-                await Sleep(time);
+                await colorSelected(array,i,j,colors[1]);
+               // await Sleep(time);
               
               swap(array,i,j);
               await Sleep(time);
-              colorUnSelected(array,i,j,"blue");
+              await colorUnSelected(array,i,j,colors[0]);
               //colorSorted(array,i,j,"green")
             }
            
         }
-        await Sleep(time);
-        colorSorted(array,i,"green");
+    //    await Sleep(time);
+        await colorSorted(array,i,colors[2]);
     }
 
 }
-//let a = createRandArray(document.getElementById("container"),100);
+//let aa = createRandArray(document.getElementById("container"),100,["red","blue","black"]);
 
 
-///bubbleSort(a,5)
+//bubbleSort(aa,5,["red","blue","black"])

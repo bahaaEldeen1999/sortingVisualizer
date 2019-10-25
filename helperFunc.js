@@ -1,6 +1,7 @@
-function createDiv(parent,height){
+function createDiv(parent,height,colors){
     let d = document.createElement("div");
     d.style.height = height+"px";
+    d.style.backgroundColor = colors[0];
     d.classList.add('bar')
     
     parent.appendChild(d);
@@ -10,11 +11,11 @@ function createDiv(parent,height){
     }
 }
 
-function createRandArray(parent,size){
+function createRandArray(parent,size,colors){
     let arr = [];
     for(let i=0;i<size;i++){
         let rand = Math.floor(Math.random()*500+30);
-        arr.push( createDiv(parent,rand) );
+        arr.push( createDiv(parent,rand,colors) );
     }
     return arr;
 }
