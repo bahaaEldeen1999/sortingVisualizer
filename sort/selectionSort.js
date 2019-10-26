@@ -6,15 +6,16 @@ async function selectionSort( arr, order,time,colors){
      let small = 999999999;
      let ind = -1;
      for(let j=i;j<arr.length;j++){
+      await Sleep(time);
        if(arr[j].val < small){
        small = arr[j].val;
        ind = j;
        }  
      }
-     //await Sleep(time);
+     await Sleep(time);
      await colorSelected(arr,ind,i,colors[1]);
      swap(arr,ind,i);
-     await Sleep(time);
+     //await Sleep(time);
      await colorUnSelected(arr,ind,i,colors[0]);
 
     
@@ -24,15 +25,17 @@ async function selectionSort( arr, order,time,colors){
         let max = -999999999;
      let ind = -1;
      for(let j=i;j<arr.length;j++){
+      await Sleep(time);
        if(arr[j].val > max){
        max = arr[j].val;
        ind = j;
        }  
      }
-     //await Sleep(time);
-     await colorSelected(arr,ind,i,colors[1]);
-     swap(arr,ind,i);
      await Sleep(time);
+     await colorSelected(arr,ind,i,colors[1]);
+     
+     swap(arr,ind,i);
+    // await Sleep(time);
      await colorUnSelected(arr,ind,i,colors[1]);
 
     

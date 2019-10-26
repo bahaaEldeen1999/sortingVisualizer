@@ -8,6 +8,7 @@
 .bar{
     min-width: 10px;
     border: 1px gray solid;
+    
 }
 body{
     overflow-x: hidden;

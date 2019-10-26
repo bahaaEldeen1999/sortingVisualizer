@@ -14,7 +14,15 @@ function createDiv(parent,height,colors){
 function createRandArray(parent,size,colors){
     let arr = [];
     for(let i=0;i<size;i++){
-        let rand = Math.floor(Math.random()*500+30);
+        let rand = Math.floor(Math.random()*800+30);
+        arr.push( createDiv(parent,rand,colors) );
+    }
+    return arr;
+}
+function createDecArray(parent,size,colors){
+    let arr = [];
+    for(let i=size;i>=0;i--){
+        let rand = Math.floor(i*3+40);
         arr.push( createDiv(parent,rand,colors) );
     }
     return arr;
@@ -26,7 +34,8 @@ function swap(array,i,j){
     
     array[j].div.style.height = temp.val+"px";
     array[j].val = temp.val;
-   
+//    array[i] = array[j]
+//    array[j] = temp;
     
     //console.log(temp.val+ "    "+array[i].val)
 }

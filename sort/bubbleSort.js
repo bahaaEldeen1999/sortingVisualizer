@@ -15,7 +15,12 @@ async function bubbleSort(array,time,colors){
            
         }
     //    await Sleep(time);
-        await colorSorted(array,i,colors[2]);
+       // await colorSorted(array,i,colors[2]);
+
+    }
+    for(let i=0;i<size;i++){
+        await Sleep(time);
+    await colorSorted(array,i,colors[2]);
     }
 
 }

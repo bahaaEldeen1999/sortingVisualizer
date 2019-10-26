@@ -16,8 +16,9 @@
                 </span>
                 <div id="menu">
                     <div id="generateArray">
-                        <input type="number" class="form-control" placeholder="number of elements" value="80" >
-                        <button  class="btn btn-default" onclick="generateArray()">generate new array</button>
+                        <input type="number" class="form-control" placeholder="number of elements" value="80" min="1" max="200" >
+                        <button  class="btn btn-default" onclick="generateRandomArray()">generate random array</button>
+                        <button  class="btn btn-default" onclick="generateDescArray()">generate descending array</button>
                     </div>
                     <div id="chooseSort">
                         <select >

@@ -6,11 +6,25 @@ let a = createRandArray(parent,100,colors);
 let time = .5;
 let order = "inc";
 let sorty = false;
-function generateArray(){
+function generateRandomArray(){
     let val = Number(document.querySelector('#generateArray input').value);
+    if(val > 200){
+        val = 200;
+        document.querySelector('#generateArray input').value = "200"
+    }else if(val < 1){
+        val = 1;
+        document.querySelector('#generateArray input').value = "1"
+    }
    a.forEach(el=>el.div.parentNode.removeChild(el.div))
    a = [];
    a = createRandArray(parent,val,colors);
+   sorty = false;
+}
+function generateDescArray(){
+    let val = Number(document.querySelector('#generateArray input').value);
+   a.forEach(el=>el.div.parentNode.removeChild(el.div))
+   a = [];
+   a = createDecArray(parent,val,colors);
    sorty = false;
 }
 async function sortArray(){
@@ -36,7 +50,7 @@ async function sortArray(){
             await selectionSort(a,"inc",time,colors)
             break;
     }
-    sorty = false;
+   
 }
 }
 h3.innerHTML = "your sorting speed is " + 10 ; 
@@ -47,7 +61,7 @@ function setSpeed(){
         "100";
         val = 100;
     }
-    if(val == 0) {
+    if(val <= 0) {
         document.querySelector('#chooseSpeed input').value = 
         "1";
         val = 1;
